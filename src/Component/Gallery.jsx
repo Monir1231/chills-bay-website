@@ -26,9 +26,9 @@ function Gallery() {
         <Head className="mx-auto mb-4">What are you in the mood for?</Head>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mb-10 container p-4 ">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mb-10 container p-4  ">
         {imgdata.map((item, index) => (
-          <div key={index} className="md:py-5 py-4 " >
+          <div key={index} className="md:py-5 py-4  " >
             <img className="w-full lg:h-[533px] md:h-[500px] h-[164px]" src={item.img} />
 
             <div>
