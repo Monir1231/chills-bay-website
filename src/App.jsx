@@ -6,6 +6,7 @@ import Gallery from './Component/Gallery'
 import AllCard from './Component/Card'
 import Shoping from './Component/Shoping'
 import MyCarousel from './Component/Carousel'
+import Allpeople from './Component/Allpeople'
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
       <AllCard/>
       <Shoping/>
       <MyCarousel/>
+      <Allpeople/>
       
     </>
   )

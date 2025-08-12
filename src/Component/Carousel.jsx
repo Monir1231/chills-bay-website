@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "../common/head";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { Button } from "@heroui/react";
+import { Button, slider } from "@heroui/react";
 
 const CarouselData = [
   {
@@ -12,13 +12,13 @@ const CarouselData = [
   },
   {
     id: 2,
-    image: "person1.png",
+    image: "cara.png",
     Heading: "welcome to our hostal",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
   },
   {
     id: 3,
-    image: "img6.png",
+    image: "cara.png",
     Heading: "welcome to our usa",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
   },
@@ -49,6 +49,10 @@ const date = [
 
 function MyCarousel() {
   const [CurrentIndex, setCurrentIndex] = useState(0);
+  const handaleDotClick = (index) => {
+    setCurrentIndex(index);
+  };
+
   const CurrentSlider = CarouselData[CurrentIndex];
 
   const handlePrev = () => {
@@ -60,14 +64,14 @@ function MyCarousel() {
 
   return (
     <section className="my-12 lg:my-24">
-      <Head className="text-start mt-20 mb-2 px-8">
+      <Head className="text-start md:text-5xl mt-20 mb-2 px-8 py-6">
         See How People are Chilling On Chillsbay
       </Head>
       <div className="relative w-full max-w-screen-2xl mx-auto overflow-x-hidden">
         <div className="flex justify-between items-center">
           <button
             onClick={handlePrev}
-            className="text-[#26395C] absolute left-0 transform translate-x-6 md:flex items-center justify-center md:text-5xl hidden  "
+            className="text-[#26395C] absolute left-0 transform translate-x-6 lg:flex items-center justify-center md:text-5xl hidden  "
           >
             <BsChevronLeft />
           </button>
@@ -121,10 +125,20 @@ function MyCarousel() {
 
           <button
             onClick={handleNext}
-            className="text-[#26395C] absolute right-0 transform translate-y-6 md:flex items-center justify-center md:text-5xl hidden "
+            className="text-[#26395C] absolute right-0 transform translate-y-6 lg:flex items-center justify-center md:text-5xl hidden "
           >
             <BsChevronRight />
           </button>
+        </div>
+        <div className="flex items-center justify-center gap-2 mt-6">
+          {CarouselData.map((_, index) => (
+            <button
+              onClick={() => handaleDotClick(index)}
+              className={`size-3 rounded-full ${
+                index === CurrentIndex ? "bg-black" : "bg-gray-300"
+              }`}
+            ></button>
+          ))}
         </div>
       </div>
     </section>
