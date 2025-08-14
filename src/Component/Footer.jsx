@@ -49,7 +49,7 @@ const Menusection = ({ title, menus }) => {
   return (
     <div>
       <p className="text-2xl font-semibold border-b-1 w-fit mb-5 py-3">{title}</p>
-      <div className="flex gap-10 text-xl">
+      <div className="flex gap-12 text-xl">
         {menus.map((menu, index) => (
           <ul key={index}>
             {menu.items.map((item, ind) => (
@@ -67,7 +67,7 @@ const Menusection = ({ title, menus }) => {
 function Footer() {
   const { socalIcon, sections, partnerSection, logo, copyRight } = footerData;
   return (
-    <footer className="my-10">
+    <footer className="my-10 md:p-3 p-12">
       <div className="container md:w-[95%] w-[95%] mx-auto  grid grid-cols-1 md:grid-cols-4 gap-2">
         {/* left */}
         <div className=" col-span-1">

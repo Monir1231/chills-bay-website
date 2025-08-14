@@ -11,6 +11,7 @@ import {
   Link,
   Button,
 } from "@heroui/react";
+
 import {
   Dropdown,
   DropdownTrigger,
@@ -19,19 +20,22 @@ import {
   DropdownItem,
 } from "@heroui/dropdown";
 
-import { FaChevronDown, FaRegUser } from "react-icons/fa";
+import { FaChevronDown,  } from "react-icons/fa";
 
 import { useState } from "react";
+import MYMordal from "./Home/Mordal";
+import MYdropdown from "./Home/dropdown";
 
 function MyNavbar() {
   const [isOpenMenu, setOpenMenu] = useState(false);
   const Menuitems = ["Events", "Club"];
+   const value = true
+ 
   return (
     <section className="mt-3">
       <Navbar
         isMenuOpen={isOpenMenu}
         onMenuOpenChange={setOpenMenu}
-    
         className="w-full "
       >
         <NavbarContent className="sm:hidden" justify="start">
@@ -52,7 +56,7 @@ function MyNavbar() {
 
         <NavbarContent className="hidden sm:flex gap-4 w-full justify-center  ">
           <NavbarBrand>
-            <img className="w-44" src="logo.png"/>
+            <img className="w-44" src="logo.png" />
           </NavbarBrand>
 
           {/* Navitem  */}
@@ -92,19 +96,7 @@ function MyNavbar() {
           </NavbarItem>
 
           <NavbarItem>
-            <Dropdown>
-              <DropdownTrigger>
-                <Button variant="none">
-                  <FaRegUser /> Account
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="new">New file</DropdownItem>
-                <DropdownItem key="copy">Copy link</DropdownItem>
-                <DropdownItem key="edit">Edit file</DropdownItem>
-                <DropdownItem>Delete file</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            {value === true? <MYMordal/> : <MYdropdown/>}
           </NavbarItem>
 
           <NavbarItem className="w-full justify-center">
@@ -112,26 +104,23 @@ function MyNavbar() {
           </NavbarItem>
         </NavbarContent>
 
-          <div className="lg:hidden">
-        <NavbarContent className="w-full" justify="end">
-          <NavbarItem className="hidden lg:flex"> </NavbarItem>
+        <div className="lg:hidden">
+          <NavbarContent className="w-full" justify="end">
+            <NavbarItem className="hidden lg:flex"> </NavbarItem>
 
-          <NavbarItem>
-            <img src="/shoping.png" alt="" />
-          </NavbarItem>
-        </NavbarContent>
+            <NavbarItem>
+              <img src="/shoping.png" alt="" />
+            </NavbarItem>
+          </NavbarContent>
 
-        <NavbarMenu className="bg-[#F5FAFF]">
-          {Menuitems.map((item, index) => (
-            <NavbarMenuItem key={index}>
-              <Link className="w-full text-black capitalize ">{item}</Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      </div>
-
-
-        
+          <NavbarMenu className="bg-[#F5FAFF]">
+            {Menuitems.map((item, index) => (
+              <NavbarMenuItem key={index}>
+                <Link className="w-full text-black capitalize ">{item}</Link>
+              </NavbarMenuItem>
+            ))}
+          </NavbarMenu>
+        </div>
       </Navbar>
     </section>
   );
