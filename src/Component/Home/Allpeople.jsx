@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Head from '../common/head'
+import Head from '../../common/head'
 
 const peopleimgData =[
     {

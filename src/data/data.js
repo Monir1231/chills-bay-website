@@ -1,4 +1,4 @@
-import Carousel from "../Component/Carousel"
+import Carousel from "../Component/Home/Carousel"
 
 export const cardData=[
     {

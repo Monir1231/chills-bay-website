@@ -1,6 +1,6 @@
 import React from "react";
-import Head from "../common/head";
-import { shopingData } from "../data/data";
+import Head from "../../common/head";
+import { shopingData } from "../../data/data";
 
 function Shoping() {
 

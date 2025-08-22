@@ -20,7 +20,8 @@ import {
   DropdownItem,
 } from "@heroui/dropdown";
 
-import { FaChevronDown,  } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 import { useState } from "react";
 import MYMordal from "./Home/Mordal";
@@ -29,8 +30,8 @@ import MYdropdown from "./Home/dropdown";
 function MyNavbar() {
   const [isOpenMenu, setOpenMenu] = useState(false);
   const Menuitems = ["Events", "Club"];
-   const value = true
- 
+  let value = true;
+
   return (
     <section className="mt-3">
       <Navbar
@@ -47,30 +48,47 @@ function MyNavbar() {
         <NavbarContent className="sm:hidden md:flex pr-3">
           <NavbarBrand>
             <Link to="/">
-              <img className="w-44 " src="/logo.png" alt="" />{" "}
+              <NavLink to="/">
+                {" "}
+                <img className="w-44" src="logo.png" />
+              </NavLink>
             </Link>
           </NavbarBrand>
         </NavbarContent>
 
         {/* destop  */}
 
-        <NavbarContent className="hidden sm:flex gap-4 w-full justify-center  ">
+        <NavbarContent className=" sm:flex hidden gap-4 w-full justify-center  ">
           <NavbarBrand>
-            <img className="w-44" src="logo.png" />
+            <NavLink to="/">
+              {" "}
+              <img className="w-44" src="logo.png" />
+            </NavLink>
           </NavbarBrand>
 
           {/* Navitem  */}
           <NavbarItem>
-            <Link className="foreground text-[#26395C]">Eat & Drink</Link>
+            <NavLink
+              to="/drink"
+              className="foreground text-[#26395C]"
+              style={({ isActive }) => ({
+                color: isActive ? "#0E8BFF" : "black",
+              })}
+            >
+              Eat & Drink
+            </NavLink>
           </NavbarItem>
 
           <NavbarItem>
-            <Link className="foreground text-[#26395C]">
+            <NavLink to="/club" className="foreground text-[#26395C]"  
+              style={({ isActive }) => ({
+                color: isActive ? "#0E8BFF" : "black",
+              })}>
               Club
-              <sup className="py-[10px] px-[10px] rounded-full bg-[#0E8BFF] text-white">
+              <sup className="py-[2px] px-[4px] rounded-full bg-[#0E8BFF] text-[8px] text-white">
                 +Hot
               </sup>
-            </Link>
+            </NavLink>
           </NavbarItem>
 
           <NavbarItem>
@@ -96,7 +114,7 @@ function MyNavbar() {
           </NavbarItem>
 
           <NavbarItem>
-            {value === true? <MYMordal/> : <MYdropdown/>}
+            {value === true ? <MYMordal /> : <MYdropdown />}
           </NavbarItem>
 
           <NavbarItem className="w-full justify-center">

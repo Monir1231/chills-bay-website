@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "../common/head";
+import Head from "../../common/head";
 
 function Gallery() {
   const imgdata = [
