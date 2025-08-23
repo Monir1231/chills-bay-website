@@ -3,7 +3,8 @@ import { Hero } from './Hero'
 import Search from './Search'
 import Gallery from './Gallery'
 import MyCarousel2 from './Carousel'
-import Nearby from './Nearby'
+import MyMap from './Map'
+import MYNearby from './Nearby'
 
 function DrinkPage() {
   return (
@@ -12,7 +13,10 @@ function DrinkPage() {
     <Search/>
     <Gallery/>
     <MyCarousel2/>
-    <Nearby/>
+   <MYNearby/>
+    <MyMap/>
+   
+   
     
     
     

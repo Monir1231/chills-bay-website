@@ -2,13 +2,13 @@ import React from 'react'
 import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
 
-function  Nearby() {
+function  MYNearby() {
   return (
     <section className=' mt-14 md:mt-24 bg-[#F5FAFF] py-5 md:py-10 '>
     <div className='lg:w-[85%] md:w-[90%] w-[92%] mx-auto'>
     <div className='flex items-center justify-between mb-5'>
     <h2 className='text-[#26395C] lg:text-[32px] md:text-2xl text-xl font-bold'>Resturants nearby</h2>
-    <h3 className='lg:text-[24px] md:text-[20px] text-lg text-[#0E8BFF] font-semibold  '>See More</h3>
+    <h3 className='lg:text-[24px] md:text-[20px] text-lg text-[#0E8BFF] font-semibold'>See More</h3>
     </div>
 
     <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 lg:gap-5 gap-9'>
@@ -28,4 +28,4 @@ function  Nearby() {
   )
 }
 
-export default Nearby
+export default MYNearby
