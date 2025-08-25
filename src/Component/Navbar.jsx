@@ -33,10 +33,11 @@ function MyNavbar() {
   let value = true;
 
   return (
-    <section className="mt-3">
+    <section className="my-3">
       <Navbar
         isMenuOpen={isOpenMenu}
         onMenuOpenChange={setOpenMenu}
+        maxWidth="2xl"
         className="w-full "
       >
         <NavbarContent className="sm:hidden" justify="start">
@@ -80,10 +81,13 @@ function MyNavbar() {
           </NavbarItem>
 
           <NavbarItem>
-            <NavLink to="/club" className="foreground text-[#26395C]"  
+            <NavLink
+              to="/club"
+              className="foreground text-[#26395C]"
               style={({ isActive }) => ({
                 color: isActive ? "#0E8BFF" : "black",
-              })}>
+              })}
+            >
               Club
               <sup className="py-[2px] px-[4px] rounded-full bg-[#0E8BFF] text-[8px] text-white">
                 +Hot
@@ -109,7 +113,9 @@ function MyNavbar() {
 
           <NavbarItem>
             <Link className="foreground">
-              <img src="shoping.png" />
+              <NavLink to="/cart">
+                <img className="w-24 " src="/shoping.png" alt="" />
+              </NavLink>
             </Link>
           </NavbarItem>
 
