@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import MyModral from "./PayModal";
 
 function MyPayment() {
   const [Showpayment, setShowpayment] = useState(false);
@@ -201,7 +202,7 @@ function MyPayment() {
           )}
         </div>
 
-        <div className="bg-gray-200 p-4 rounded-lg">
+        <div className="bg-gray-100 p-4 rounded-lg mt-5">
           <ul>
             {CardItem.map((item) => (
               <li key={item.id} className="flex justify-between mb-2">
@@ -243,6 +244,7 @@ function MyPayment() {
             <span className="text-base text-red-500">Total ₦{(CardItem.reduce((sum,item)=> sum + item.price,0) * 1.05).toLocaleString()}</span>
 
            </div>
+           <MyModral/>
 
 
         </div>

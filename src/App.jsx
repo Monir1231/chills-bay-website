@@ -6,6 +6,7 @@ import DrinkPage from "./Component/Drinkpage/Drink";
 import ClubPage from "./Component/ClubPage/ClubPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyPayment from "./Component/Payment/Payment"
+import Contact from "./Component/Contact/Contact";
 
 
 
@@ -19,6 +20,7 @@ function App() {
            <Route path="/drink" element={<DrinkPage/>} ></Route>
            <Route path="/club" element={<ClubPage/>}></Route>
            <Route path="/cart" element={<MyPayment/>}></Route>
+           <Route path="/contact" element={<Contact/>}></Route>
         
         </Routes>
         <Footer />

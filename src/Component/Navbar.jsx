@@ -124,7 +124,9 @@ function MyNavbar() {
           </NavbarItem>
 
           <NavbarItem className="w-full justify-center">
-            <Button color="primary">Contact Now</Button>
+            <NavLink to="/contact">
+              <Button color="primary">Contact Now</Button>
+            </NavLink>
           </NavbarItem>
         </NavbarContent>
 
