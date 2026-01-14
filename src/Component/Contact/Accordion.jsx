@@ -16,7 +16,7 @@ export default function MyAccordion() {
         </p>
       </div>
 
-      <Accordion className="my-14 py-6" variant="splitted" defaultExpandedKeys={["1"]} >
+      <Accordion className="my-14 py-6" variant="splitted" defaultExpandedKeys={["1"]}  >
         <AccordionItem key="1" aria-label="Do you offer refunds for purchased products?" title="Do you offer refunds for purchased products?" className="font-bold">
           <p className="text-sm font-normal text-[#656B89]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum adipiscing tristique ut blandit massa tellus amet at. Amet, arcu tellus cursus leo. Eget malesuada a enim, at at cursus ornare et nunc. Enim ultrices platea morbi.</p>
         </AccordionItem>
@@ -30,7 +30,7 @@ export default function MyAccordion() {
         <AccordionItem key="3" aria-label="How does Chillsbay work?" title="How does Chillsbay work?"  className="font-bold">
          <p className="text-sm font-normal text-[#656B89]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum adipiscing tristique ut blandit massa tellus amet at. Amet, arcu tellus cursus leo. Eget malesuada a enim, at at cursus ornare et nunc. Enim ultrices platea morbi.</p>
         </AccordionItem>
-        
+
       </Accordion>
     </div>
   );

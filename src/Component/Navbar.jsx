@@ -114,12 +114,14 @@ function MyNavbar() {
           <NavbarItem>
             <Link className="foreground">
               <NavLink to="/cart">
-                <img className="w-24 " src="/shoping.png" alt="" />
+                <img className=" w-28 " src="/shoping.png" alt="" />
               </NavLink>
             </Link>
           </NavbarItem>
 
+         {/* man icon  */}
           <NavbarItem>
+          
             {value === true ? <MYMordal /> : <MYdropdown />}
           </NavbarItem>
 

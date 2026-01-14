@@ -12,7 +12,7 @@ const CarouselData = [
   },
   {
     id: 2,
-    image: "cara.png",
+    image: "DrinkCarosel.png",
     Heading: "welcome to our hostal",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
   },
@@ -67,15 +67,37 @@ function MyCarousel() {
       <Head className="text-start md:text-5xl mt-20 mb-2 px-8 py-6">
         See How People are Chilling On Chillsbay
       </Head>
+
+      {/* mobile carousel start */}
+             
+           <div className="  flex items-center justify-center gap-6 mt-3.5">
+             <button
+            onClick={handlePrev}
+            className="text-[#26395C]  flex  md:hidden text-2xl "
+          >
+             <BsChevronLeft />
+          </button>
+
+           <button
+            onClick={handleNext}
+            className="text-[#26395C] flex  md:hidden  text-2xl "
+          >
+            <BsChevronRight />
+          </button>
+
+           </div>
+          {/* mobile carousel end */} 
+
       <div className="relative w-full max-w-screen-2xl mx-auto overflow-x-hidden">
         <div className="flex justify-between items-center">
           <button
             onClick={handlePrev}
-            className="text-[#26395C] absolute left-0 transform translate-x-6 lg:flex items-center justify-center md:text-5xl hidden  "
+            className="text-[#26395C] absolute left-0 transform translate-x-6 lg:flex items-center justify-center md:text-5xl text-xl hidden md:flex "
           >
             <BsChevronLeft />
           </button>
-
+          
+          
           <div className="flex flex-col lg:flex-row items-center gap-6 w-full mx-auto lg:px-20 px-8">
             {/* right  */}
             <div className="w-full lg:w-1/2">
@@ -125,7 +147,7 @@ function MyCarousel() {
 
           <button
             onClick={handleNext}
-            className="text-[#26395C] absolute right-0 transform translate-y-6 lg:flex items-center justify-center md:text-5xl hidden "
+            className="text-[#26395C] absolute right-0 transform translate-y-6 lg:flex items-center justify-center md:text-5xl text-xl hidden md:flex "
           >
             <BsChevronRight />
           </button>

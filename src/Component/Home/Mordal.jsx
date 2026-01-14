@@ -8,7 +8,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  useDisclosure,
+ 
 } from "@heroui/react";
 
 function MYMordal() {
@@ -25,7 +25,7 @@ function MYMordal() {
         <Button
           variant="flat"
           onPress={handleOpen}
-          className="text-gray-500 w-4 h-4"
+          className="text-gray-500 w-4 h-9"
         >
           <FaRegUser />
         </Button>

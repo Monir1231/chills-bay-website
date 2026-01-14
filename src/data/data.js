@@ -32,6 +32,38 @@ export const cardData=[
     {
         img:"img7.png",
         title:"Sight Seeing"
+    },
+    {
+        img:"img6.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img7.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img6.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img7.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img6.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img7.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img6.png",
+        title:"Sight Seeing"
+    },
+    {
+        img:"img7.png",
+        title:"Sight Seeing"
     }
 ]
 
