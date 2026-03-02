@@ -25,8 +25,9 @@ function MYMordal() {
         <Button
           variant="flat"
           onPress={handleOpen}
-          className="text-gray-500 w-4 h-9"
-        >
+          className="text-gray-500  py-2 px-3"
+        > 
+           <p className=" text-base">Login</p>
           <FaRegUser />
         </Button>
       </div>

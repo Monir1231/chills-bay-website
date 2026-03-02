@@ -21,18 +21,18 @@ function Gallery() {
     },
   ];
   return (
-    <div className="xl:my-24 md:my-20 my-16 container md:w-[85%] w-[95%] mx-auto">
+    <div className="lg:mt-[50px] mt-[40px]  container md:w-[85%] w-[95%] mx-auto">
       <div>
-        <Head className="mx-auto mb-4">What are you in the mood for?</Head>
+        <Head className="mx-auto lg:mb-4 mb-2 text-center lg:text-start">What are you in the mood for?</Head>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mb-10 container  ">
         {imgdata.map((item, index) => (
           <div key={index} className="md:py-5 py-4  " >
-            <img className="w-full object-center lg:h-[500px] md:h-[500px] h-[364px]" src={item.img} />
+            <img className="w-full object-cover  lg:h-[533px]  h-[164px]" src={item.img} />
 
             <div>
-              <h4 className="text-[21px] md:text-[text-24px] lg:text-[31px] text-center font-bold mt-4">{item.title}</h4>
+              <h4 className="text-[21px] md:text-[text-24px] lg:text-[31px] text-center font-bold lg:mt-4  mt-2.5 text-[#26395C]">{item.title}</h4>
             </div>
           </div>
         ))}

@@ -1,4 +1,4 @@
-import Carousel from "../Component/Home/Carousel"
+import Carousel from "../page/Home/Carousel"
 
 export const cardData=[
     {
@@ -7,15 +7,15 @@ export const cardData=[
     },
     {
         img:"img7.png",
-        title:"Sight Seeing"
+        title:"Volley Ball Game"
     },
     {
-        img:"img6.png",
-        title:"Sight Seeing"
+        img:"img8.png",
+        title:"Wizkid Show"
     },
     {
-        img:"img7.png",
-        title:"Sight Seeing"
+        img:"img8.png",
+        title:"Wizkid Show"
     },
     {
         img:"img6.png",

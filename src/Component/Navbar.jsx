@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -8,7 +7,6 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Link,
   Button,
 } from "@heroui/react";
 
@@ -16,21 +14,20 @@ import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
-  DropdownSection,
   DropdownItem,
 } from "@heroui/dropdown";
 
 import { FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-import { useState } from "react";
-import MYMordal from "./Home/Mordal";
-import MYdropdown from "./Home/dropdown";
+import MYMordal from "../page/Home/Mordal";
+import MYdropdown from "../page/Home/dropdown";
 
 function MyNavbar() {
   const [isOpenMenu, setOpenMenu] = useState(false);
-  const Menuitems = ["Events", "Club"];
-  let value = true;
+  let value = true
+
+
 
   return (
     <section className="my-3">
@@ -38,67 +35,54 @@ function MyNavbar() {
         isMenuOpen={isOpenMenu}
         onMenuOpenChange={setOpenMenu}
         maxWidth="2xl"
-        className="w-full "
+        className="w-full"
       >
+        {/* Mobile Menu Toggle */}
         <NavbarContent className="sm:hidden" justify="start">
-          <NavbarMenuToggle
-            aria-level={isOpenMenu ? "Close menu" : "Open menu"}
-          />
+          <NavbarMenuToggle />
         </NavbarContent>
 
-        <NavbarContent className="sm:hidden md:flex pr-3">
-          <NavbarBrand>
-            <Link to="/">
-              <NavLink to="/">
-                {" "}
-                <img className="w-44" src="logo.png" />
-              </NavLink>
-            </Link>
-          </NavbarBrand>
-        </NavbarContent>
-
-        {/* destop  */}
-
-        <NavbarContent className=" sm:flex hidden gap-4 w-full justify-center  ">
+        {/* Desktop Navbar */}
+        <NavbarContent className="sm:flex hidden gap-6 w-full justify-center items-center">
+          {/* Logo */}
           <NavbarBrand>
             <NavLink to="/">
-              {" "}
-              <img className="w-44" src="logo.png" />
+              <img className="w-44" src="/logo.png" alt="logo" />
             </NavLink>
           </NavbarBrand>
 
-          {/* Navitem  */}
+          {/* Eat & Drink */}
           <NavbarItem>
             <NavLink
               to="/drink"
-              className="foreground text-[#26395C]"
-              style={({ isActive }) => ({
-                color: isActive ? "#0E8BFF" : "black",
-              })}
+              className={({ isActive }) =>
+                isActive ? "text-[#0E8BFF]" : "text-[#26395C]"
+              }
             >
               Eat & Drink
             </NavLink>
           </NavbarItem>
 
+          {/* Club */}
           <NavbarItem>
             <NavLink
               to="/club"
-              className="foreground text-[#26395C]"
-              style={({ isActive }) => ({
-                color: isActive ? "#0E8BFF" : "black",
-              })}
+              className={({ isActive }) =>
+                isActive ? "text-[#0E8BFF]" : "text-[#26395C]"
+              }
             >
               Club
-              <sup className="py-[2px] px-[4px] rounded-full bg-[#0E8BFF] text-[8px] text-white">
+              <sup className="ml-1 py-[2px] px-[4px] rounded-full bg-[#0E8BFF] text-[8px] text-white">
                 +Hot
               </sup>
             </NavLink>
           </NavbarItem>
 
+          {/* Dropdown */}
           <NavbarItem>
             <Dropdown>
               <DropdownTrigger>
-                <Button variant="none">
+                <Button variant="light">
                   Things to do <FaChevronDown />
                 </Button>
               </DropdownTrigger>
@@ -111,44 +95,103 @@ function MyNavbar() {
             </Dropdown>
           </NavbarItem>
 
+          {/* Cart */}
           <NavbarItem>
-            <Link className="foreground">
-              <NavLink to="/cart">
-                <img className=" w-28 " src="/shoping.png" alt="" />
-              </NavLink>
-            </Link>
+            <NavLink to="/cart">
+              <img src="/shoping.png" alt="cart" />
+            </NavLink>
           </NavbarItem>
 
-         {/* man icon  */}
+          {/* User Toggle */}
           <NavbarItem>
-          
-            {value === true ? <MYMordal /> : <MYdropdown />}
+            <button >
+              { value === false ? <MYdropdown /> : <MYMordal />}
+            </button>
           </NavbarItem>
 
-          <NavbarItem className="w-full justify-center">
+          {/* Contact Button */}
+          <NavbarItem>
             <NavLink to="/contact">
               <Button color="primary">Contact Now</Button>
             </NavLink>
           </NavbarItem>
         </NavbarContent>
 
-        <div className="lg:hidden">
-          <NavbarContent className="w-full" justify="end">
-            <NavbarItem className="hidden lg:flex"> </NavbarItem>
+        {/* Mobile Menu */}
+        <NavbarMenu className="bg-[#F5FAFF] pt-10">
+         
+          <div className=" space-y-4 pt-3">
+            {/* Eat & Drink */}
+          <NavbarItem>
+            <NavLink
+              to="/drink"
+              className={({ isActive }) =>
+                isActive ? "text-[#0E8BFF]" : "text-[#26395C]"
+              }
+            >
+              Eat & Drink
+            </NavLink>
+          </NavbarItem>
 
-            <NavbarItem>
-              <img src="/shoping.png" alt="" />
-            </NavbarItem>
-          </NavbarContent>
+          {/* Club */}
+          <NavbarItem>
+            <NavLink
+              to="/club"
+              className={({ isActive }) =>
+                isActive ? "text-[#0E8BFF]" : "text-[#26395C]"
+              }
+            >
+              Club
+              <sup className=" py-[2px] px-[4px] rounded-full bg-[#0E8BFF] text-[8px] text-white">
+                +Hot
+              </sup>
+            </NavLink>
+          </NavbarItem>
 
-          <NavbarMenu className="bg-[#F5FAFF]">
-            {Menuitems.map((item, index) => (
-              <NavbarMenuItem key={index}>
-                <Link className="w-full text-black capitalize ">{item}</Link>
-              </NavbarMenuItem>
-            ))}
-          </NavbarMenu>
-        </div>
+
+            <NavbarItem className=" mt-5">
+          <NavLink to="/contact">
+            <Button
+              className=" lg:hidden flex  py-1 px-3 text-[10px] font-semibold"
+              color="primary"
+            >
+              Contact Now
+            </Button>
+          </NavLink>
+        </NavbarItem>
+
+       
+          </div>
+
+
+          <img className="w-30  lg:hidden mt-1" src="/logo.png" alt="logo" />
+        </NavbarMenu>
+
+      
+
+           {/* Dropdown */}
+          <NavbarItem className=" lg:hidden flex">
+            <Dropdown>
+              <DropdownTrigger>
+                <Button  className=" bg-gray-100">
+                  Things to do <FaChevronDown />
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu aria-label="Static Actions">
+                <DropdownItem key="new">New file</DropdownItem>
+                <DropdownItem key="copy">Copy link</DropdownItem>
+                <DropdownItem key="edit">Edit file</DropdownItem>
+                <DropdownItem key="delete">Delete file</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </NavbarItem>
+
+        {/* cart  */}
+        <NavbarItem className=" flex md:hidden">
+          <NavLink to="/cart">
+            <img src="../../public/shoping.png" alt="cart" />
+          </NavLink>
+        </NavbarItem>
       </Navbar>
     </section>
   );

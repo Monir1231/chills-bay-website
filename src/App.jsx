@@ -1,12 +1,12 @@
 import "./App.css";
 import MyNavbar from "./Component/Navbar";
-import Home from "./Component/Home/Index";
+import Home from "./page/Home/Index";
 import Footer from "./Component/Footer";
-import DrinkPage from "./Component/Drinkpage/Drink";
-import ClubPage from "./Component/ClubPage/ClubPage";
+import DrinkPage from "./page/Drinkpage/Drink";
+import ClubPage from "./page/ClubPage/ClubPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MyPayment from "./Component/Payment/Payment"
-import Contact from "./Component/Contact/Contact";
+import MyPayment from "./page/Payment/Payment"
+import Contact from "./page/Contact/Contact";
 
 
 
@@ -21,6 +21,8 @@ function App() {
            <Route path="/club" element={<ClubPage/>}></Route>
            <Route path="/cart" element={<MyPayment/>}></Route>
            <Route path="/contact" element={<Contact/>}></Route>
+
+          
         
         </Routes>
         <Footer />
