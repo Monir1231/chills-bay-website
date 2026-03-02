@@ -75,7 +75,7 @@ function AllCard() {
         </div>
 
         {vissable < cardData.length && (
-          <div className=" text-center my-4 hidden lg:flex">
+          <div className=" text-center my-4 hidden lg:flex items-center justify-center">
             <button
               onClick={LodeMore}
               className="py-2 px-4 rounded-md font-semibold bg-gray-600 text-white"

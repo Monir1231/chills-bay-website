@@ -9,43 +9,46 @@ const CarouselData = [
     image: "cara.png",
     Heading: "Wizkid made in lagos tour",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    Calendarimg: "Calendar.png",
+    Calendartitle: "JAN 12 2025",
+      Markimg: "Mark.png",
+      Marktitle: "TBS  Lagos",
+      Clockimg: "Clock.png",
+    Clocktitle: "9:00 PM ",
+      Tagimg: "Tag.png",
+    Tagtitle: "N20,000",
   },
   {
     id: 2,
     image: "DrinkCarosel.png",
-    Heading: "welcome to our hostal",
+    Heading: "Welcome to our hostal",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    Calendarimg: "Calendar.png",
+    Calendartitle: "Dec 12 2025",
+      Markimg: "Mark.png",
+      Marktitle: "TBS  Lagos",
+      Clockimg: "Clock.png",
+    Clocktitle: "10:00 PM ",
+      Tagimg: "Tag.png",
+    Tagtitle: "N40,000",
   },
   {
     id: 3,
     image: "cara.png",
-    Heading: "welcome to our usa",
+    Heading: "Welcome to our shop",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    Calendarimg: "Calendar.png",
+    Calendartitle: "FUB 12 2026",
+      Markimg: "Mark.png",
+      Marktitle: "TBS  Lagos",
+      Clockimg: "Clock.png",
+    Clocktitle: "9:40 PM ",
+      Tagimg: "Tag.png",
+    Tagtitle: "N10,000",
   },
+  
 ];
 
-const date = [
-  {
-    id: 1,
-    img: "Calendar.png",
-    title: "Dec 12 2022",
-  },
-  {
-    id: 2,
-    img: "Mark.png",
-    title: "Dec 12 2022",
-  },
-  {
-    id: 3,
-    img: "Calendar.png",
-    title: "Dec 12 2022",
-  },
-  {
-    id: 4,
-    img: "Calendar.png",
-    title: "Dec 12 2022",
-  },
-];
 
 function MyCarousel() {
   const [CurrentIndex, setCurrentIndex] = useState(0);
@@ -63,30 +66,17 @@ function MyCarousel() {
   };
 
   return (
-    <section className="my-12 lg:my-24">
-      <Head className="text-start md:text-5xl mt-20 mb-2 px-8 py-6">
+    <section className="my-12 lg:mt-[50px]">
+      <Head className="hidden lg:flex items-center justify-center text-start lg:text-center md:text-5xl mt-20 mb-2 px-8 py-6">
         See How People are Chilling On Chillsbay
       </Head>
 
-      {/* mobile carousel start */}
-             
-           <div className="  flex items-center justify-center gap-6 mt-3.5">
-             <button
-            onClick={handlePrev}
-            className="text-[#26395C]  flex  md:hidden text-2xl "
-          >
-             <BsChevronLeft />
-          </button>
+   
+        <Head className=" lg:hidden flex text-start  lg:mt-16  mb-2 px-8 ">
+      Upcoming events <br/> this weekend
+      </Head>
 
-           <button
-            onClick={handleNext}
-            className="text-[#26395C] flex  md:hidden  text-2xl "
-          >
-            <BsChevronRight />
-          </button>
-
-           </div>
-          {/* mobile carousel end */} 
+           
 
       <div className="relative w-full max-w-screen-2xl mx-auto overflow-x-hidden">
         <div className="flex justify-between items-center">
@@ -105,6 +95,18 @@ function MyCarousel() {
                 className="object-cover w-full h-auto rounded-2xl mt-5"
                 src={CurrentSlider.image}
               />
+
+               <div className="lg:hidden flex items-center justify-center gap-2 mt-2">
+          {CarouselData.map((_, index) => (
+            <button
+              onClick={() => handaleDotClick(index)}
+              className={`size-3 rounded-full ${
+                index === CurrentIndex ? "bg-black" : "bg-gray-300"
+              }`}
+            ></button>
+          ))}
+        </div>
+
             </div>
 
             {/* left  */}
@@ -118,12 +120,33 @@ function MyCarousel() {
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-4">
-                {date.map((item, id) => (
+                 <div  className="flex items-center gap-2">
+                    <img src={CurrentSlider.Calendarimg} />
+                    <h4 className="text-[20px] font-bold">{CurrentSlider.Calendartitle}</h4>
+                      </div>
+
+                      <div  className="flex items-center gap-2">
+                    <img src={CurrentSlider.Markimg} />
+                    <h4 className="text-[20px] font-bold">{CurrentSlider.Marktitle}</h4>
+                      </div>
+
+
+                      <div  className="flex items-center gap-2">
+                    <img src={CurrentSlider.Clockimg} />
+                    <h4 className="text-[20px] font-bold">{CurrentSlider.Clocktitle}</h4>
+                      </div> 
+
+                      <div  className="flex items-center gap-2">
+                    <img src={CurrentSlider.Tagimg} />
+                    <h4 className="text-[20px] font-bold">{CurrentSlider.Tagtitle}</h4>
+                      </div>
+
+                {/* {date.map((item, id) => (
                   <div key={id} className="flex items-center gap-2">
                     <img src={item.img} />
                     <h4 className="text-[20px] font-bold">{item.title}</h4>
                   </div>
-                ))}
+                ))} */}
 
                 <div className="flex flex-row gap-5 mt-4">
                   <Button variant="bordered" color="primary" size="lg">
@@ -152,6 +175,7 @@ function MyCarousel() {
             <BsChevronRight />
           </button>
         </div>
+
         <div className="flex items-center justify-center gap-2 mt-6">
           {CarouselData.map((_, index) => (
             <button

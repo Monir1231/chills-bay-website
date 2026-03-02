@@ -1,6 +1,13 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 @plugin '../hero.ts';
 /* Note: You may need to change the path to fit your project structure */
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
+
+
+@theme{
+    --font-RedHat:"Red Hat Display", sans-serif;
+    --font-jakarta:"Plus Jakarta Sans", sans-serif;
+}
+

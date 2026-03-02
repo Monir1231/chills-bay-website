@@ -25,12 +25,20 @@ const peopleimgData =[
 
 function Allpeople() {
   return (
-    <div className='md:w-[80%] w-[90%] mx-auto'>
-   <h4 className='lg:text-2xl md:text-[20px] text-base font-bold text-[#26395C] mt-20 mb-5'>See How people are chilling on <span className='text-[#0E8BFF]'>Chillsbay</span></h4>
-     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6'>
+    <div className='lg:w-[85%] w-[90%]  mx-auto mb-16'>
+   <div className=' hidden lg:flex'>
+    <h4 className='  text-2xl font-bold text-[#26395C] mt-16 mb-5'>See How people are chilling on <span className='text-[#0E8BFF]'> Chillsbay</span></h4>
+   </div>
+
+     <div className=' lg:hidden flex'>
+    <h4 className='  text-2xl font-bold text-[#26395C] mt-10 mb-5'>See How people are chilling <br/> on <span className='text-[#0E8BFF]'> Chillsbay</span></h4>
+   </div>
+
+
+     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 '>
        {peopleimgData.map((item,index)=>(
         <div key={index}>
-            <img className='w-full mb-6 h-[180px]' src={item.img}/>
+            <img className='w-full h-[180px]' src={item.img}/>
         </div>
        ))}
      </div>
