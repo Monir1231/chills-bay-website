@@ -15,7 +15,7 @@ const herodata = [
 
 const Hero = () => {
   return (
-    <section className=' lg:bg-[url("hero3.png")] bg-[url("modile3.png")] bg-no-repeat bg-center bg-cover h-[441px] md:h-[555px]'>
+    <section className=' lg:bg-[url("/hero3.png")] bg-[url("modile3.png")] bg-no-repeat bg-center bg-cover h-[441px] md:h-[555px]'>
       <Swiper  autoplay={{
               delay: 3000,
               disableOnInteraction: false,
