@@ -8,7 +8,7 @@ function Info() {
     <>
       <section className="lg:w-[75%] w-[95%] mx-auto flex flex-col lg:flex-row gap-11 mt-24  ">
         {/* left  */}
-        <div className="lg:w-1/2">
+        <div className="lg:w-1/2 ">
           <h2 className="text-[42px] font-bold mb-4 text-[#26395C] max-w-[416px]">
             Contact Us
           </h2>

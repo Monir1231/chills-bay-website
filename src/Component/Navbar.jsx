@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { PiShoppingCartBold, PiShoppingCartLight } from "react-icons/pi";
 import {
   Navbar,
   NavbarBrand,
@@ -22,20 +23,23 @@ import { NavLink } from "react-router-dom";
 
 import MYMordal from "../page/Home/Mordal";
 import MYdropdown from "../page/Home/dropdown";
+import { ThemeColor } from "../lib/utils";
 
-function MyNavbar() {
+
+function MyNavbar({isDark}) {
   const [isOpenMenu, setOpenMenu] = useState(false);
   let value = true
 
 
 
   return (
-    <section className="my-3">
+    <section className=" py-3">
       <Navbar
         isMenuOpen={isOpenMenu}
         onMenuOpenChange={setOpenMenu}
         maxWidth="2xl"
-        className="w-full"
+         className={ThemeColor(isDark)}
+       
       >
         {/* Mobile Menu Toggle */}
         <NavbarContent className="sm:hidden" justify="start">
@@ -54,9 +58,11 @@ function MyNavbar() {
           {/* Eat & Drink */}
           <NavbarItem>
             <NavLink
+            
               to="/drink"
+             
               className={({ isActive }) =>
-                isActive ? "text-[#0E8BFF]" : "text-[#26395C]"
+                isActive ? "text-[#0E8BFF]" : isDark ? " text-white": "text-black" 
               }
             >
               Eat & Drink
@@ -68,7 +74,7 @@ function MyNavbar() {
             <NavLink
               to="/club"
               className={({ isActive }) =>
-                isActive ? "text-[#0E8BFF]" : "text-[#26395C]"
+                isActive ? "text-white" : isDark ? " text-white": "text-black" 
               }
             >
               Club
@@ -82,11 +88,11 @@ function MyNavbar() {
           <NavbarItem>
             <Dropdown>
               <DropdownTrigger>
-                <Button variant="light">
+                <Button variant="light" className={isDark ? " text-white": "text-black" } >
                   Things to do <FaChevronDown />
                 </Button>
               </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
+              <DropdownMenu aria-label="Static Actions" >
                 <DropdownItem key="new">New file</DropdownItem>
                 <DropdownItem key="copy">Copy link</DropdownItem>
                 <DropdownItem key="edit">Edit file</DropdownItem>
@@ -97,8 +103,8 @@ function MyNavbar() {
 
           {/* Cart */}
           <NavbarItem>
-            <NavLink to="/cart">
-              <img src="/shoping.png" alt="cart" />
+            <NavLink to={"/cart"}>
+             {isDark ? <PiShoppingCartLight className=" size-6" />:  <PiShoppingCartBold className=" size-6" /> }
             </NavLink>
           </NavbarItem>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@heroui/react";
+import { Button, cn } from "@heroui/react";
 
 const footerData = {
   socalIcon: [
@@ -42,18 +42,18 @@ const footerData = {
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque posuere.",
   },
   logo: "logo.png",
-  copyRight: `${new Date().getFullYear()}Copyright 2022 ©`,
+  copyRight: `${new Date().getFullYear()} Copyright By Monir `,
 };
 
-const Menusection = ({ title, menus }) => {
+const Menusection = ({ title, menus,isDark }) => {
   return (
     <div>
-      <p className="text-2xl font-semibold border-b-1 w-fit mb-5 py-3">{title}</p>
-      <div className="flex gap-12 text-xl">
+      <h2 className= {cn("text-base font-bold text-[#26395C] border-b-1 w-fit mb-5 py-3",isDark && " text-white")} >{title}</h2>
+      <div className="flex gap-12 text-base">
         {menus.map((menu, index) => (
           <ul key={index}>
             {menu.items.map((item, ind) => (
-              <li key={ind} className="mb-3">
+              <li key={ind} className=  {cn("mb-3 text-[#656B89]",isDark && " text-[#E4E7EC]")}  >
                 {item}
               </li>
             ))}
@@ -64,15 +64,15 @@ const Menusection = ({ title, menus }) => {
   );
 };
 
-function Footer() {
+function Footer({isDark}) {
   const { socalIcon, sections, partnerSection, logo, copyRight } = footerData;
   return (
-    <footer className="my-10 md:p-3 p-12">
+    <footer className= {cn("my-10 md:p-3 p-12 bg-white",isDark && " bg-[#9A9FBF1A]")} >
       <div className="container md:w-[95%] w-[95%] mx-auto  grid grid-cols-1 md:grid-cols-4 gap-2">
         {/* left */}
         <div className=" col-span-1">
           <img className="w-fit" src={logo} />
-          <p className="text-sm mb-4">{copyRight}</p>
+          <p className= {cn("text-sm mb-4 text-[#26395C]",isDark && " text-white")} >{copyRight}</p>
           <div className="flex items-center space-x-2">
             {socalIcon.map((item, index) => (
               <a key={index} href="#">
@@ -92,12 +92,12 @@ function Footer() {
           ))}
 
           <div className=" w-full">
-            <div className=" bg-[#F5FAFF]  rounded-2xl  p-5">
+            <div className= {cn(" bg-[#F5FAFF]  rounded-2xl  p-5",isDark && " bg-[#D0D8E71A]/10")}>
               <img src={partnerSection.img} />
-              <h3 className="text-2xl font-bold text-[#26395C] mt-2">
+              <h3 className= {cn("text-2xl font-bold text-[#26395C] mt-2",isDark && " text-white")} >
                 {partnerSection.title}
               </h3>
-              <p className="text-md text-gray-400 py-4">{partnerSection.des}</p>
+              <p className=  {cn("text-md text-[#656B89] py-4",isDark && " text-[#969DAA]")}  >{partnerSection.des}</p>
               <Button color="primary"  className="w-full">Join Now</Button>
             </div>
           </div>

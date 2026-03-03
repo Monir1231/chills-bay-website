@@ -7,6 +7,7 @@ import ClubPage from "./page/ClubPage/ClubPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyPayment from "./page/Payment/Payment"
 import Contact from "./page/Contact/Contact";
+import Wrapper from "./Component/Wrapper";
 
 
 
@@ -14,18 +15,18 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <MyNavbar />
+        {/* <MyNavbar /> */}
         <Routes>
-          <Route path="/" element={<Home/>} ></Route>
-           <Route path="/drink" element={<DrinkPage/>} ></Route>
-           <Route path="/club" element={<ClubPage/>}></Route>
-           <Route path="/cart" element={<MyPayment/>}></Route>
-           <Route path="/contact" element={<Contact/>}></Route>
+          <Route path="/" element={<Wrapper><Home/></Wrapper>} />
+           <Route path="/drink" element={<Wrapper><DrinkPage/></Wrapper>} />
+           <Route path="/club" element={<Wrapper isDark><ClubPage/></Wrapper>}/>
+           <Route path="/cart" element={<Wrapper><MyPayment/></Wrapper>}/>
+           <Route path="/contact" element={<Wrapper><Contact/></Wrapper>}/>
 
           
         
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
 
       

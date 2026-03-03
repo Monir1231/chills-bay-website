@@ -1,13 +1,16 @@
 import React from "react";
 import { Autocomplete, AutocompleteItem } from "@heroui/react";
 import { Button } from "@heroui/react";
+import Head from "../../common/Head";
 
 function Search() {
   return (
     <>
-      <div className="container lg:w-[85%] md:w-[90%] w-[85%] mx-auto  mt-10 ">
-        
+      <div className=" container lg:w-[85%] md:w-[90%] w-[85%] mx-auto  lg:mt-20 mt-14 ">
+          <Head className={" hidden lg:flex lg:text-[28px] mb-4  "}>Find the best places to eat and drink for any occasion</Head>
+           
           <div className="grid  grid-cols-1 lg:grid-cols-6  items-center md:grid-cols-4   lg:gap-5 md:gap-3 gap-4 lg:shadow-none shadow-lg lg:p-0 p-6 rounded-md">
+           <Head className={"lg:hidden flex lg:text-[26px] mb-4  "}>Find the best places <br/> to eat and drink for <br/> any occasion</Head>
             <div>
               <Autocomplete
                 labelPlacement="outside"

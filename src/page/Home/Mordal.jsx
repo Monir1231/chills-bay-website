@@ -8,10 +8,11 @@ import {
   ModalBody,
   ModalFooter,
   Button,
+  cn,
  
 } from "@heroui/react";
 
-function MYMordal() {
+function MYMordal({isDark}) {
   const [isOpen, setisOpen] = useState(false);
   const handleOpen = () => {
     setisOpen(true);
@@ -25,10 +26,11 @@ function MYMordal() {
         <Button
           variant="flat"
           onPress={handleOpen}
-          className="text-gray-500  py-2 px-3"
+          className={cn("  bg-white text-black",isDark && " bg-black text-white")}
         > 
-           <p className=" text-base">Login</p>
-          <FaRegUser />
+            <FaRegUser className={cn(" bg-white",isDark && " bg-white")}/>
+           Account
+         
         </Button>
       </div>
 
@@ -40,10 +42,10 @@ function MYMordal() {
         placement="top"
       >
         <ModalContent>
-          <ModalBody className="px-0 py-0">
-            <div className="flex flex-col md:flex-row h-full w-full overflow-y-auto md:overflow-visible">
+          <ModalBody className="lg:px-0 lg:py-0 py-4 px-3 ">
+            <div className="flex flex-col md:flex-row lg:h-full lg:w-full  overflow-y-auto md:overflow-visible ">
               {/* left side  */}
-              <div className='bg-[url("LoginImg.png")] bg-cover bg-no-repeat bg-center flex-col text-white w-full md:w-1/3 p-8'>
+              <div className='bg-[url("LoginImg.png")] bg-cover bg-no-repeat bg-center flex-col text-white w-full md:w-1/3 p-8 hidden lg:flex'>
                 <h1 className="text-4xl text-start mb-5 mt-10 font-bold">
                   Sign Up
                 </h1>

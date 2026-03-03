@@ -1,7 +1,7 @@
 import React from 'react'
 import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
-import Head from '../../common/head'
+import Head from '../../common/Head'
 
 function Gallery() {
   return (
@@ -16,8 +16,8 @@ function Gallery() {
      {GalleryData.map((item,index)=>(
         <div  key={index}>
         <img className='w-full' src={item.img}/>
-        <h2 className='text-2xl font-bold pt-4 text-[#26395C]'>{item.title}</h2>
-        <p className='text-sm text-[#26395C] py-2.5'>{item.des}</p>
+        <h2 className='lg:text-2xl text-xl font-bold pt-4 text-[#26395C]'>{item.title}</h2>
+        <p className='text-sm text-[#26395C] py-2'>{item.des}</p>
         <Button className='mt-1' color='primary'>{item.button}</Button>
 
         </div>

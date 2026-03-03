@@ -12,7 +12,7 @@ function DrinkPage() {
     <Hero/>
     <Search/>
     <Gallery/>
-    <MyCarousel2/>
+ <MyCarousel2/>
    <MYNearby/>
     <MyMap/>
    

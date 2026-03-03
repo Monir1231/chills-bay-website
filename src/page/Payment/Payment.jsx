@@ -61,7 +61,7 @@ function MyPayment() {
     setCardItem([...CardItem, newItem]);
   };
   return (
-    <section className="flex flex-col lg:flex-row gap-6 w-[80%] mx-auto mt-24">
+    <section className="flex flex-col lg:flex-row gap-6 w-[90%] mx-auto mt-24">
       {/* right side  */}
       <div className="flex-1 p-6">
         <h2 className="text-base font-semibold text-[#969DAA]">Your Cart</h2>

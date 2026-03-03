@@ -1,12 +1,21 @@
+// Map.jsx
+import React from "react";
 
-function MyMap() {
+const MyMap = () => {
   return (
-    <>
-      <div className="mt-8 md:mt-20 md:mb-5">
-          <img className="w-full" src='map.png'/>
-      </div>
-    </>
-  )
-}
+    <div className=" container lg:w-[90%]  w-[95%] mx-auto  lg:mt-20 mt-14 ">
 
-export default MyMap
+      <div className="  w-full h-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_LINK"
+          
+         className=" w-full lg:h-100 h-52"
+         
+         
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
+export default MyMap;

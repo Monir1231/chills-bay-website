@@ -25,7 +25,7 @@ const peopleimgData =[
 
 function Allpeople() {
   return (
-    <div className='lg:w-[85%] w-[90%]  mx-auto mb-16'>
+    <div className=' container lg:w-[85%] w-[90%]  mx-auto mb-16'>
    <div className=' hidden lg:flex'>
     <h4 className='  text-2xl font-bold text-[#26395C] mt-16 mb-5'>See How people are chilling on <span className='text-[#0E8BFF]'> Chillsbay</span></h4>
    </div>
