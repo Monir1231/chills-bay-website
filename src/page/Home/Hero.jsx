@@ -7,7 +7,7 @@ import hero1 from '/chills-bay-website/public/hero.png'
 
 function Hero() {
   return (
-    <section  style={{ backgroundImage: `url(${hero1})` }} className="lg:bg-[url('public/hero.png')]  bg-no-repeat bg-center bg-cover lg:py-28 md:py-24 py-16 lg:text-start text-center">
+    <section  style={{ backgroundImage: `url(${hero1})` }} className="  bg-no-repeat bg-center bg-cover lg:py-28 md:py-24 py-16 lg:text-start text-center">
       <div className="container lg:w-[80%] md:w-[90%] w-[80%]  mx-auto md:text-[#FFFFFF] bg-white md:bg-transparent p-6 md:p-0 rounded-2xl lg:mb-20 mb-9  ">
         <h1 className=" lg:mx-0 lg:text-[62px] md:text-[42px] md:mx-auto md:max-w-[600px]   font-bold xl:max-w-[694px] hidden md:flex">
           Find amazing things to do anytime, anywhere in Lagos.
