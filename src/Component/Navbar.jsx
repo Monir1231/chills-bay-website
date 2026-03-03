@@ -168,9 +168,9 @@ function MyNavbar({isDark}) {
 
        
           </div>
-
-
-          <img className="w-30  lg:hidden mt-1" src="/logo.png" alt="logo" />
+          <NavLink to={"/"}>
+            <img className="w-30  lg:hidden mt-1" src="/logo.png" alt="logo" />
+          </NavLink>
         </NavbarMenu>
 
       
@@ -195,7 +195,7 @@ function MyNavbar({isDark}) {
         {/* cart  */}
         <NavbarItem className=" flex md:hidden">
           <NavLink to="/cart">
-            <img src="../../public/shoping.png" alt="cart" />
+            <img src="/shoping.png" alt="cart" />
           </NavLink>
         </NavbarItem>
       </Navbar>
