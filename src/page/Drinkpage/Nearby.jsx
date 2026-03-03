@@ -8,7 +8,7 @@ function  MYNearby() {
     <section className=' mt-14 md:mt-24 bg-[#F5FAFF] py-5 md:py-10 '>
     <div className='lg:w-[85%] md:w-[90%] w-[90%] mx-auto'>
     <div className='flex items-center justify-between mb-5 lg:mb-8'>
-    <Title className='text-[#26395C] lg:text-[32px] md:text-2xl text-xl font-bold'>Resturants nearby</Title>
+    <Title>Resturants nearby</Title>
     <h3 className='lg:text-[24px] md:text-[20px] text-lg text-[#0E8BFF] font-semibold'>See More</h3>
     </div>
 

@@ -1,7 +1,7 @@
 import Head from "../../common/head";
 import { cardData } from "../../data/data";
 // Import Swiper React components
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 

@@ -67,7 +67,7 @@ const Menusection = ({ title, menus,isDark }) => {
 function Footer({isDark}) {
   const { socalIcon, sections, partnerSection, logo, copyRight } = footerData;
   return (
-    <footer className= {cn("my-10 md:p-3 p-12 bg-white",isDark && " bg-[#9A9FBF1A]")} >
+    <footer className= {cn("mt-10 md:p-3 p-12 bg-white",isDark && " bg-[#9A9FBF1A]")} >
       <div className="container md:w-[95%] w-[95%] mx-auto  grid grid-cols-1 md:grid-cols-4 gap-2">
         {/* left */}
         <div className=" col-span-1">

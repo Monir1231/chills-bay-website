@@ -3,16 +3,10 @@ import React from "react";
 
 const MyMap = () => {
   return (
-    <div className=" container lg:w-[90%]  w-[95%] mx-auto  lg:mt-20 mt-14 ">
+    <div className=" container lg:w-[90%]  w-[90%] mx-auto rounded-md  lg:mt-20 mt-12 ">
 
-      <div className="  w-full h-full">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_LINK"
-          
-         className=" w-full lg:h-100 h-52"
-         
-         
-        ></iframe>
+      <div className="  w-full h-auto">
+       <img src={"/map.png"}/>
       </div>
     </div>
   );

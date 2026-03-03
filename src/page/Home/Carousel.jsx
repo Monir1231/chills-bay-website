@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "../../common/head";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { Button, slider } from "@heroui/react";
+import { Button, cn,  } from "@heroui/react";
 
 const CarouselData = [
   {
@@ -11,11 +11,11 @@ const CarouselData = [
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     Calendarimg: "Calendar.png",
     Calendartitle: "JAN 12 2025",
-      Markimg: "Mark.png",
-      Marktitle: "TBS  Lagos",
-      Clockimg: "Clock.png",
+    Markimg: "Mark.png",
+    Marktitle: "TBS  Lagos",
+    Clockimg: "Clock.png",
     Clocktitle: "9:00 PM ",
-      Tagimg: "Tag.png",
+    Tagimg: "Tag.png",
     Tagtitle: "N20,000",
   },
   {
@@ -25,32 +25,30 @@ const CarouselData = [
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     Calendarimg: "Calendar.png",
     Calendartitle: "Dec 12 2025",
-      Markimg: "Mark.png",
-      Marktitle: "TBS  Lagos",
-      Clockimg: "Clock.png",
+    Markimg: "Mark.png",
+    Marktitle: "TBS  Lagos",
+    Clockimg: "Clock.png",
     Clocktitle: "10:00 PM ",
-      Tagimg: "Tag.png",
+    Tagimg: "Tag.png",
     Tagtitle: "N40,000",
   },
   {
     id: 3,
-    image: "cara.png",
+    image: "cara3.png",
     Heading: "Welcome to our shop",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     Calendarimg: "Calendar.png",
     Calendartitle: "FUB 12 2026",
-      Markimg: "Mark.png",
-      Marktitle: "TBS  Lagos",
-      Clockimg: "Clock.png",
+    Markimg: "Mark.png",
+    Marktitle: "TBS  Lagos",
+    Clockimg: "Clock.png",
     Clocktitle: "9:40 PM ",
-      Tagimg: "Tag.png",
+    Tagimg: "Tag.png",
     Tagtitle: "N10,000",
   },
-  
 ];
 
-
-function MyCarousel() {
+function MyCarousel({isDark}) {
   const [CurrentIndex, setCurrentIndex] = useState(0);
   const handaleDotClick = (index) => {
     setCurrentIndex(index);
@@ -67,16 +65,14 @@ function MyCarousel() {
 
   return (
     <section className="my-12 lg:mt-[50px]">
-      <Head className="hidden lg:flex items-center justify-center text-start lg:text-center md:text-5xl mt-20 mb-2 px-8 py-6">
-        See How People are Chilling On Chillsbay
-      </Head>
+      <div className=' container lg:w-[85%] w-[90%]  mx-auto '>
 
-   
-        <Head className=" lg:hidden flex text-start  lg:mt-16  mb-2 px-8 ">
-      Upcoming events <br/> this weekend
+        <Head className= {cn( " lg:text-center  text-start  lg:mt-16  mb-2  max-w-[200px] lg:max-w-[806px] lg:mx-auto",isDark && " text-white ")}  >
+       
+      {isDark ? "Tonight In Lagos" : " Upcoming events  this weekend"}
       </Head>
-
-           
+      </div>
+      
 
       <div className="relative w-full max-w-screen-2xl mx-auto overflow-x-hidden">
         <div className="flex justify-between items-center">
@@ -86,8 +82,7 @@ function MyCarousel() {
           >
             <BsChevronLeft />
           </button>
-          
-          
+
           <div className="flex flex-col lg:flex-row items-center gap-6 w-full mx-auto lg:px-20 px-8">
             {/* right  */}
             <div className="w-full lg:w-1/2">
@@ -96,17 +91,16 @@ function MyCarousel() {
                 src={CurrentSlider.image}
               />
 
-               <div className="lg:hidden flex items-center justify-center gap-2 mt-2">
-          {CarouselData.map((_, index) => (
-            <button
-              onClick={() => handaleDotClick(index)}
-              className={`size-3 rounded-full ${
-                index === CurrentIndex ? "bg-black" : "bg-gray-300"
-              }`}
-            ></button>
-          ))}
-        </div>
-
+              <div className="lg:hidden flex items-center justify-center gap-2 mt-2">
+                {CarouselData.map((_, index) => (
+                  <button
+                    onClick={() => handaleDotClick(index)}
+                    className={`size-3 rounded-full ${
+                      index === CurrentIndex ? "bg-black" : "bg-gray-300"
+                    }`}
+                  ></button>
+                ))}
+              </div>
             </div>
 
             {/* left  */}
@@ -115,31 +109,38 @@ function MyCarousel() {
               <h2 className="text-2xl lg:text-5xl font-bold max-w-[385px] leading-tight">
                 {CurrentSlider.Heading}
               </h2>
-              <p className="md:text-[20px] text-base text-[#26395C]  ">
+              <p className= {cn("md:text-[20px] text-base text-[#26395C] ",isDark && " text-white")}>
                 {CurrentSlider.des}
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-4">
-                 <div  className="flex items-center gap-2">
-                    <img src={CurrentSlider.Calendarimg} />
-                    <h4 className="text-[20px] font-bold">{CurrentSlider.Calendartitle}</h4>
-                      </div>
+                <div className="flex items-center gap-2">
+                  <img src={CurrentSlider.Calendarimg} />
+                  <h4 className="text-[20px] font-bold">
+                    {CurrentSlider.Calendartitle}
+                  </h4>
+                </div>
 
-                      <div  className="flex items-center gap-2">
-                    <img src={CurrentSlider.Markimg} />
-                    <h4 className="text-[20px] font-bold">{CurrentSlider.Marktitle}</h4>
-                      </div>
+                <div className="flex items-center gap-2">
+                  <img src={CurrentSlider.Markimg} />
+                  <h4 className="text-[20px] font-bold">
+                    {CurrentSlider.Marktitle}
+                  </h4>
+                </div>
 
+                <div className="flex items-center gap-2">
+                  <img src={CurrentSlider.Clockimg} />
+                  <h4 className="text-[20px] font-bold">
+                    {CurrentSlider.Clocktitle}
+                  </h4>
+                </div>
 
-                      <div  className="flex items-center gap-2">
-                    <img src={CurrentSlider.Clockimg} />
-                    <h4 className="text-[20px] font-bold">{CurrentSlider.Clocktitle}</h4>
-                      </div> 
-
-                      <div  className="flex items-center gap-2">
-                    <img src={CurrentSlider.Tagimg} />
-                    <h4 className="text-[20px] font-bold">{CurrentSlider.Tagtitle}</h4>
-                      </div>
+                <div className="flex items-center gap-2">
+                  <img src={CurrentSlider.Tagimg} />
+                  <h4 className="text-[20px] font-bold">
+                    {CurrentSlider.Tagtitle}
+                  </h4>
+                </div>
 
                 {/* {date.map((item, id) => (
                   <div key={id} className="flex items-center gap-2">
@@ -181,7 +182,7 @@ function MyCarousel() {
             <button
               onClick={() => handaleDotClick(index)}
               className={`size-3 rounded-full ${
-                index === CurrentIndex ? "bg-black" : "bg-gray-300"
+                index === CurrentIndex ? "bg-[#0E8BFF]" : "bg-gray-300"
               }`}
             ></button>
           ))}

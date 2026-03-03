@@ -112,3 +112,45 @@ export const GalleryData =[
         button:"Reserve Now"
     },
 ]
+
+
+export const ClubALlData =[
+    {
+        img:"club1.png",
+        title:"Quilox ",
+        des:"2 Musa Yar’Adua, Lagos Nigeria",
+        month:"JUN 15",
+        day:"Mondays-Friday",
+        time:"8pm-3am",
+        button:"Reserve Now"
+
+
+    },
+    {
+        img:"club2.png",
+        title:"Silver fox",
+        des:"2 Musa Yar’Adua, Lagos Nigeria",
+        month:"JAN 25",
+          day:"Mondays-Friday",
+           time:"8pm-3am",
+        button:"Reserve Now"
+    },
+    {
+        img:"club3.png",
+        title:"Nitro night club",
+        des:"2 Musa Yar’Adua, Lagos Nigeria",
+        month:"JAN 25",
+          day:"Mondays-Friday",
+           time:"8pm-3am",
+        button:"Reserve Now"
+    },
+    {
+        img:"club4.png",
+        title:"Club vegas",
+        des:"2 Musa Yar’Adua, Lagos Nigeria",
+        month:"JAN 25",
+         time:"8pm-3am",
+          day:"Mondays-Friday",
+        button:"Reserve Now"
+    },
+]
