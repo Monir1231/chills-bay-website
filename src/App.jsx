@@ -1,6 +1,5 @@
 import "./App.css";
 import MyNavbar from "./Component/Navbar";
-import Home from "./page/Home/Index";
 import Footer from "./Component/Footer";
 import DrinkPage from "./page/Drinkpage/Drink";
 import ClubPage from "./page/ClubPage/ClubPage";
@@ -8,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyPayment from "./page/Payment/Payment"
 import Contact from "./page/Contact/Contact";
 import Wrapper from "./Component/Wrapper";
+import Home from "./page/Home";
 
 
 
