@@ -3,7 +3,7 @@ import { Button } from '@heroui/react'
 
 export const Hero = () => {
   return (
-    <section className='bg-[url("eat-and-drink-hero-bg.png")] bg-no-repeat bg-center bg-cover h-[441px] md:h-[555px]  text-center lg:text-start'>
+    <section className='bg-[url("/eat-and-drink-hero-bg.png")] bg-no-repeat bg-center bg-cover h-[441px] md:h-[555px]  text-center lg:text-start'>
 
     <div className='lg:w-[85%] md:w-[90%] w-[85%] pt-8 lg:pt-16  mx-auto   '>
         <div className='bg-white/90 w-fit text-[#26395C]  rounded-md p-4 md:p-6 ' >
