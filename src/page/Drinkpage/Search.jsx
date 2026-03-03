@@ -1,7 +1,7 @@
 import React from "react";
 import { Autocomplete, AutocompleteItem } from "@heroui/react";
 import { Button } from "@heroui/react";
-import Head from "../../common/Head";
+import Head from "../../Component/common/Head";
 
 function Search() {
   return (

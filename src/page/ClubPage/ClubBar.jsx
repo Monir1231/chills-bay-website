@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../../common/Title'
+import Title from '../../Component/common/Title'
 import { Button } from '@heroui/react'
 import { ClubALlData } from '../../data/data'
 import { MdOutlineToday } from "react-icons/md";

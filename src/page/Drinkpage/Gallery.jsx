@@ -1,7 +1,7 @@
 import React from 'react'
 import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
-import Head from '../../common/Head'
+import Head from '../../Component/common/Head'
 
 function Gallery() {
   return (

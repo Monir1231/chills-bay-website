@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Head from "../../common/head";
+import Head from "../../Component/common/head";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { Button, cn,  } from "@heroui/react";
 

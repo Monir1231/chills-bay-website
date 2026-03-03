@@ -1,5 +1,5 @@
 
-import Head from "../../common/head";
+import Head from "../../Component/common/head";
 import { shopingData } from "../../data/data";
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -1,4 +1,4 @@
-import Head from "../../common/head";
+import Head from "../../Component/common/head";
 import { cardData } from "../../data/data";
 // Import Swiper React components
 import React, { useState } from "react";
