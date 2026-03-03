@@ -1,4 +1,4 @@
-import Head from "../../Component/common/head";
+
 import { cardData } from "../../data/data";
 // Import Swiper React components
 import React, { useState } from "react";
@@ -9,6 +9,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import HeadALl from "../../Component/Head";
 
 function AllCard() {
   const [vissable, setVissable] = useState(8);
@@ -21,9 +22,9 @@ function AllCard() {
     <div className="lg:mt-[50px] mt-10   bg-[#F5FAFF] lg:py-8 py-4 ">
       <div className="container lg:w-[80%] md:w-[90%] lg:pl-0  pl-4  mx-auto">
         <div>
-          <Head className="mx-auto mt-5 md:mb-4 mb-2 text-center lg:text-start">
+          <HeadALl className="mx-auto mt-5 md:mb-4 mb-2 text-center lg:text-start">
             Top things to do in Lagos
-          </Head>
+          </HeadALl>
         </div>
 
         <div className=" hidden lg:grid  lg:grid-cols-4 space-y-7   ">

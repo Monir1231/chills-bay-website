@@ -1,7 +1,7 @@
 import React from 'react'
 import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
-import Title from '../../Component/common/Title'
+import Title from '../../Component/Title'
 
 function  MYNearby() {
   return (

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Head from "../../Component/common/head";
+
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { Button, cn,  } from "@heroui/react";
+import HeadALl from "../../Component/Head";
 
 const CarouselData = [
   {
@@ -67,10 +68,10 @@ function MyCarousel({isDark}) {
     <section className="my-12 lg:mt-[50px]">
       <div className=' container lg:w-[85%] w-[90%]  mx-auto '>
 
-        <Head className= {cn( " lg:text-center  text-start  lg:mt-16  mb-2  max-w-[200px] lg:max-w-[806px] lg:mx-auto",isDark && " text-white ")}  >
+        <HeadALl className= {cn( " lg:text-center  text-start  lg:mt-16  mb-2  max-w-[200px] lg:max-w-[806px] lg:mx-auto",isDark && " text-white ")}  >
        
       {isDark ? "Tonight In Lagos" : " Upcoming events  this weekend"}
-      </Head>
+      </HeadALl>
       </div>
       
 

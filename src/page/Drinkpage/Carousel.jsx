@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { Button,  } from "@heroui/react";
 
-import Title from "../../Component/common/Title";
+import Title from "../../Component/Title";
 
 const CarouselData = [
   {

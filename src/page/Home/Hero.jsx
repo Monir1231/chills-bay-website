@@ -1,6 +1,6 @@
 import React from "react";
 import { Autocomplete, AutocompleteItem, DateInput } from "@heroui/react";
-import {CalendarDate, parseDate} from "@internationalized/date";
+import {CalendarDate} from "@internationalized/date";
 import { Button } from "@heroui/react";
 
 function Hero() {

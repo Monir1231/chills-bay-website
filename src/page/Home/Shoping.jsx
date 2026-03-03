@@ -1,20 +1,22 @@
 
-import Head from "../../Component/common/head";
+
 import { shopingData } from "../../data/data";
-import React, { useRef, useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import HeadALl from "../../Component/Head";
+
 
 function Shoping() {
   return (
     <div className="lg:my-[50px] md:my-16 my-10 py-5 ">
       <div className="container lg:w-[85%] w-[95%] mx-auto ">
         <div>
-          <Head className="mx-auto mb-6 text-center lg:text-start">Why Use Chillsbay?</Head>
+          <HeadALl className="mx-auto mb-6 text-center lg:text-start">Why Use Chillsbay?</HeadALl>
         </div>
 
        {/* pc  */}

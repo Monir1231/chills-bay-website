@@ -1,5 +1,6 @@
 import React from "react";
-import Head from "../../Component/common/head";
+
+import HeadALl from "../../Component/Head";
 
 function Gallery() {
   const imgdata = [
@@ -23,7 +24,7 @@ function Gallery() {
   return (
     <div className="lg:mt-[50px] mt-[40px]  container md:w-[85%] w-[95%] mx-auto">
       <div>
-        <Head className="mx-auto lg:mb-4 mb-2 text-center lg:text-start">What are you in the mood for?</Head>
+        <HeadALl className="mx-auto lg:mb-4 mb-2 text-center lg:text-start">What are you in the mood for?</HeadALl>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mb-10 container  ">

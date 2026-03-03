@@ -1,14 +1,16 @@
 import React from 'react'
 import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
-import Head from '../../Component/common/Head'
+import HeadALl from '../../Component/Head'
+
+
 
 function Gallery() {
   return (
     <section className=' mt-14 md:mt-24 bg-[#F5FAFF] py-5 md:py-10 '>
     <div className='lg:w-[85%] md:w-[90%] w-[92%] mx-auto'>
     <div className='flex items-center justify-between mb-5'>
-    <Head>Resturants nearby</Head>
+    <HeadALl>Resturants nearby</HeadALl>
     <h3 className='lg:text-[24px] md:text-[20px] text-lg text-[#0E8BFF] font-semibold  '>See More</h3>
     </div>
 
