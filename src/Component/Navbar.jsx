@@ -21,8 +21,8 @@ import {
 import { FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-import MYMordal from "../page/Home/Mordal";
-import MYdropdown from "../page/Home/dropdown";
+import MYMordal from "./Mordal";
+import MYdropdown from "./Dropdown";
 import { ThemeColor } from "../lib/utils";
 
 
