@@ -3,6 +3,7 @@ import { Autocomplete, AutocompleteItem, DateInput } from "@heroui/react";
 import {CalendarDate} from "@internationalized/date";
 import { Button } from "@heroui/react";
 
+
 function Hero() {
   return (
     <section className="lg:bg-[url('/hero.png')] bg-[url('/mobile.png')]  bg-no-repeat bg-center bg-cover lg:py-28 md:py-24 py-16 lg:text-start text-center">
