@@ -6,9 +6,9 @@ import { Button } from "@heroui/react";
 function Info() {
   return (
     <>
-      <section className="lg:w-[75%] w-[95%] mx-auto flex flex-col lg:flex-row gap-11 mt-24  ">
+      <section className="lg:w-[75%] w-[90%] mx-auto flex flex-col lg:flex-row gap-11 lg:mt-24 mt-16  ">
         {/* left  */}
-        <div className="lg:w-1/2 ">
+        <div className="lg:w-1/2 w-full ">
           <h2 className="text-[42px] font-bold mb-4 text-[#26395C] max-w-[416px]">
             Contact Us
           </h2>
@@ -36,7 +36,7 @@ function Info() {
         </div>
 
         {/* right  */}
-        <div className="lg:w-1/2">
+        <div className="lg:w-1/2 w-full">
           <form className="p-3  shadow-blue-100 shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div className="p-3">

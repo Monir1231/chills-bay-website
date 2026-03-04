@@ -24,9 +24,16 @@ import { NavLink } from "react-router-dom";
 import MYMordal from "./Mordal";
 import MYdropdown from "./Dropdown";
 import { ThemeColor } from "../lib/utils";
+import { useSelector } from "react-redux";
 
 
 function MyNavbar({isDark}) {
+
+   const carts = useSelector((state)=>state.carts)
+  console.log(carts)
+
+  const cartItemNo = carts.reduce((total,product) => total + product.quantity, 0)
+
   const [isOpenMenu, setOpenMenu] = useState(false);
   let value = true
 
@@ -103,16 +110,19 @@ function MyNavbar({isDark}) {
 
           {/* Cart */}
           <NavbarItem>
-            <NavLink to={"/cart"}>
+            <NavLink className={" relative"} to={"/cart"}>
              {isDark ? <PiShoppingCartLight className=" size-6" />:  <PiShoppingCartBold className=" size-6" /> }
+             <sup className= " absolute top-[-6px] right-[-6px] flex items-center justify-center size-4 rounded-full bg-[#0E8BFF] text-[10px] text-white">
+              {cartItemNo}
+              </sup>
             </NavLink>
           </NavbarItem>
 
           {/* User Toggle */}
           <NavbarItem>
-            <button >
+       
               { value === false ? <MYdropdown /> : <MYMordal />}
-            </button>
+        
           </NavbarItem>
 
           {/* Contact Button */}
@@ -124,7 +134,8 @@ function MyNavbar({isDark}) {
         </NavbarContent>
 
         {/* Mobile Menu */}
-        <NavbarMenu className="bg-[#F5FAFF] pt-10">
+        
+        <NavbarMenu className="bg-[#F5FAFF] pt-10 ">
          
           <div className=" space-y-4 pt-3">
             {/* Eat & Drink */}
@@ -158,7 +169,7 @@ function MyNavbar({isDark}) {
             <NavbarItem className=" mt-5">
           <NavLink to="/contact">
             <Button
-              className=" lg:hidden flex  py-1 px-3 text-[10px] font-semibold"
+              className=" lg:hidden flex  py-1 px-4 text-[10px] font-semibold"
               color="primary"
             >
               Contact Now
@@ -173,7 +184,16 @@ function MyNavbar({isDark}) {
           </NavLink>
         </NavbarMenu>
 
-      
+
+
+          {/* User Toggle */}
+          <NavbarItem className=" lg:hidden flex">
+           
+              { value === false ? <MYdropdown /> : <MYMordal />}
+         
+          </NavbarItem>
+
+        
 
            {/* Dropdown */}
           <NavbarItem className=" lg:hidden flex">
@@ -194,8 +214,12 @@ function MyNavbar({isDark}) {
 
         {/* cart  */}
         <NavbarItem className=" flex md:hidden">
-          <NavLink to="/cart">
-            <img src="/shoping.png" alt="cart" />
+          <NavLink className={" relative"} to="/cart">
+             {isDark ? <PiShoppingCartLight className=" size-6 font-bold" />:  <PiShoppingCartBold className=" size-6" /> }
+
+            <sup className= " absolute top-[-6px] right-[-6px] flex items-center justify-center size-4 rounded-full bg-[#0E8BFF] text-[10px] text-white">
+              {cartItemNo}
+              </sup>
           </NavLink>
         </NavbarItem>
       </Navbar>

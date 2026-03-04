@@ -1,96 +1,90 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import MyModral from "./PayModal";
+import { useDispatch, useSelector } from "react-redux";
+import { decreaseQuantity, increaseQuantity, removeFromCart } from "../../Redux/features/carts/cartSlice";
 
 function MyPayment() {
-  const [Showpayment, setShowpayment] = useState(false);
-  const [CardItem, setCardItem] = useState([
-    {
-      id: 1,
-      image: "person1.png",
-      title: "The 90s with Dj Neptune",
-      date: "Dec 12 2022",
-      Location: "Quilox Club",
-      price: "4500",
-      time: "9:00 PM",
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: "person2.png",
-      title: "The 90s with Dj Neptune",
-      date: "Dec 12 2022",
-      Location: "Quilox Club",
-      price: "4500",
-      time: "9:00 PM",
-      quantity: 1,
-    },
-  ]);
+  
+const carts = useSelector((state)=> state.carts)
+console.log(carts)
 
-  const updateQuantity = (id, increment) => {
-    setCardItem((items) =>
-      items.map((item) =>
-        item.id === id
-          ? {
-              ...item,
-              quantity: Math.max(item.quantity + increment, 1),
-              price:
-                Math.max(item.quantity + increment, 1) *
-                (item.price / item.quantity),
-            }
-          : item
-      )
-    );
-  };
 
-  const RemoveItem = (id) => {
-    setCardItem(CardItem.filter((item) => item.id !== id));
-  };
+const dispatch = useDispatch()
+  
+// cart dec 
+const HandleDec = (id) =>{
+ dispatch(decreaseQuantity(id))
+}
 
-  const Addnewitem = () => {
-    const newItem = {
-      id: CardItem.length + 1,
-      image: "person1.png",
-      title: "The 90s with Dj Neptune",
-      date: "Dec 12 2022",
-      Location: "Quilox Club",
-      price: "4500",
-      time: "9:00 PM",
-      quantity: 1,
-    };
-    setCardItem([...CardItem, newItem]);
-  };
+// cart Inc
+const HandleInc = (id) =>{
+  dispatch(increaseQuantity(id))
+}
+
+// cart delete
+
+const RemoveCart = (id) =>{
+dispatch(removeFromCart(id))
+}
+
+// add new product 
+
+const Addnewitem = () =>{
+
+}
+
+
+
+
+  // const Addnewitem = () => {
+  //   const newItem = {
+  //     id: CardItem.length + 1,
+  //     image: "person1.png",
+  //     title: "The 90s with Dj Neptune",
+  //     date: "Dec 12 2022",
+  //     Location: "Quilox Club",
+  //     price: "4500",
+  //     time: "9:00 PM",
+  //     quantity: 1,
+  //   };
+  //   setCardItem([...CardItem, newItem]);
+  // };
+
+
+
+
   return (
     <section className="flex flex-col lg:flex-row gap-6 w-[90%] mx-auto mt-24">
       {/* right side  */}
       <div className="flex-1 p-6">
         <h2 className="text-base font-semibold text-[#969DAA]">Your Cart</h2>
 
-        {CardItem.map((Item) => (
+        {carts.map((Item) => (
           <div
             key={Item.id}
             className="flex items-center gap-4 mb-6 p-4 border-b-1"
           >
-            <img className="w-24 h-24 rounded-lg" src={Item.image} />
+            <img className="w-24 h-24 rounded-lg" src={Item.img} />
             <div className="flex-1">
               <h3>{Item.title}</h3>
 
               <div className="mt-4">
                 <div className="flex gap-3 items-center">
                   <div className="flex items-center gap-2">
-                    <img className="w-4 h-4" src="Calendar.png" />
-                    <p className="text-sm text-gray-600">{Item.date}</p>
+                    <img className="w-4 h-4" src="/Calendar.png" />
+                    <p className="text-sm text-gray-600">date</p>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <img className="w-4 h-4" src="Calendar.png" />
-                    <p className="text-sm text-gray-600">{Item.Location}</p>
+                    <img className="w-4 h-4" src="/Calendar.png" />
+                    <p className="text-sm text-gray-600">loca</p>
                   </div>
                 </div>
 
                 <div className=" flex items-center gap-2 mt-1">
-                  <img className="w-4 h-4" src="Clock.png" />
-                  <p className="text-sm text-gray-600">{Item.time}</p>
+                  <img className="w-4 h-4" src="/Clock.png" />
+                  <p className="text-sm text-gray-600">time</p>
                 </div>
               </div>
 
@@ -98,25 +92,25 @@ function MyPayment() {
               <div className="flex items-center gap-4 mt-4 bg-gray-100 rounded w-fit">
                 <button
                   className="py-1 px-2 hover:bg-gray-300"
-                  onClick={() => updateQuantity(Item.id, -1)}
+                  onClick={() =>HandleDec(Item.id)}
                 >
                   -
                 </button>
                 <span>{Item.quantity}</span>
                 <button
                   className="py-1 px-2 hover:bg-gray-300 w-fit"
-                  onClick={() => updateQuantity(Item.id, 1)}
+                  onClick={()=>HandleInc(Item.id)}
                 >
                   +
                 </button>
               </div>
 
               <p className="mt-2 text-lg font-bold">
-                ₦{Item.price.toLocaleString()}
+                ₦{Item.price * Item.quantity}
               </p>
             </div>
             <button
-              onClick={() => RemoveItem(Item.id)}
+              onClick={()=>RemoveCart(Item.id)}
               className="py-1.5 px-4 rounded-full bg-red-500 text-base text-white"
             >
               delete
@@ -161,7 +155,7 @@ function MyPayment() {
 
         {/* payment fieild */}
 
-        <div>
+        {/* <div>
           <h3
             onClick={() => setShowpayment(!Showpayment)}
             className="text-lg font-semibold mb-2 flex gap-2"
@@ -200,11 +194,11 @@ function MyPayment() {
               />
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className="bg-gray-100 p-4 rounded-lg mt-5">
           <ul>
-            {CardItem.map((item) => (
+            {carts.map((item) => (
               <li key={item.id} className="flex justify-between mb-2">
                 <span>
                   {item.title} {item.quantity}
@@ -221,19 +215,19 @@ function MyPayment() {
             <span>Subtotal:</span>
             <span>
               ₦
-              {CardItem.reduce(
-                (sum, item) => sum  + item.price,0
+              {carts.reduce(
+                (sum, item) => sum  + item.price * item.quantity,0
               ).toLocaleString()}
             </span>
           </div>
 
-       {/* tex  */}
+       {/* text  */}
           <div className="flex justify-between mt-2">
             <span>Tax(5%):</span>
             <span>
               ₦
               {(
-                CardItem.reduce((sum, item) => sum + item.price, 0) * 0.05
+                carts.reduce((sum, item) => sum + item.price * item.quantity, 0) * 0.05
               ).toLocaleString()}
             </span>
           </div>
@@ -241,7 +235,7 @@ function MyPayment() {
             <hr className="my-2" />
            <div className="flex justify-between font-bold">
            <span className="text-base text-teal-500">Total aumont:</span>
-            <span className="text-base text-red-500">Total ₦{(CardItem.reduce((sum,item)=> sum + item.price,0) * 1.05).toLocaleString()}</span>
+            <span className="text-base text-red-500">Total ₦{(carts.reduce((sum,item)=> sum + item.price * item.quantity,0) * 1.05).toLocaleString()}</span>
 
            </div>
            <MyModral/>

@@ -2,10 +2,20 @@ import React from 'react'
 import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
 import HeadALl from '../../Component/Head'
+import { useDispatch } from 'react-redux'
+import { addCarts } from '../../Redux/features/carts/cartSlice'
+
 
 
 
 function Gallery() {
+
+ const dispatch = useDispatch()
+
+  const handleAddCarts = (product) =>{
+     dispatch(addCarts(product))
+  }
+
   return (
     <section className=' mt-14 md:mt-24 bg-[#F5FAFF] py-5 md:py-10 '>
     <div className='lg:w-[85%] md:w-[90%] w-[92%] mx-auto'>
@@ -20,7 +30,7 @@ function Gallery() {
         <img className='w-full' src={item.img}/>
         <h2 className='lg:text-2xl text-xl font-bold pt-4 text-[#26395C]'>{item.title}</h2>
         <p className='text-sm text-[#26395C] py-2'>{item.des}</p>
-        <Button className='mt-1' color='primary'>{item.button}</Button>
+        <Button onClick={()=>handleAddCarts(item)} className='mt-1' color='primary'>{item.button}</Button>
 
         </div>
      ))}

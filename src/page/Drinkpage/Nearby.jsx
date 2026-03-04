@@ -3,7 +3,10 @@ import { GalleryData } from '../../data/data'
 import { Button } from '@heroui/react'
 import Title from '../../Component/Title'
 
+
 function  MYNearby() {
+
+ 
   return (
     <section className=' mt-14 md:mt-24 bg-[#F5FAFF] py-5 md:py-10 '>
     <div className='lg:w-[85%] md:w-[90%] w-[90%] mx-auto'>

@@ -180,7 +180,7 @@ function MyCarousel({isDark}) {
 
         <div className="flex items-center justify-center gap-2 mt-6">
           {CarouselData.map((_, index) => (
-            <button
+            <button key={index}
               onClick={() => handaleDotClick(index)}
               className={`size-3 rounded-full ${
                 index === CurrentIndex ? "bg-[#0E8BFF]" : "bg-gray-300"

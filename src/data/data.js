@@ -88,28 +88,36 @@ export const shopingData =[
 
 export const GalleryData =[
     {
+        id:1,
         img:"card1.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
-        button:"Reserve Now"
+        button:"Reserve Now",
+        price:4500
     },
     {
+         id:2,
         img:"card2.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
-        button:"Reserve Now"
+        button:"Reserve Now",
+         price:4500
     },
     {
+         id:3,
         img:"card3.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
-        button:"Reserve Now"
+        button:"Reserve Now",
+         price:4500
     },
     {
+         id:4,
         img:"card4.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
-        button:"Reserve Now"
+        button:"Reserve Now",
+         price:4500
     },
 ]
 

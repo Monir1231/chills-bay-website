@@ -40,6 +40,7 @@ function MYMordal({isDark}) {
         onClose={handleClose}
         size="5xl"
         placement="top"
+        className=" lg:mt-0  mt-12 lg:mx-0 mx-3"
       >
         <ModalContent>
           <ModalBody className="lg:px-0 lg:py-0 py-4 px-3 ">
