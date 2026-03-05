@@ -2,167 +2,169 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import MyModral from "./PayModal";
 import { useDispatch, useSelector } from "react-redux";
-import { decreaseQuantity, increaseQuantity, removeFromCart } from "../../Redux/features/carts/cartSlice";
+import { RxCross1 } from "react-icons/rx";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../../Redux/features/carts/cartSlice";
+import { Button } from "@heroui/react";
 
 function MyPayment() {
-  
-const carts = useSelector((state)=> state.carts)
-console.log(carts)
+  const [Showpayment, setShowpayment] = useState(false);
 
+  const carts = useSelector((state) => state.carts);
+  // console.log(carts);
 
-const dispatch = useDispatch()
-  
-// cart dec 
-const HandleDec = (id) =>{
- dispatch(decreaseQuantity(id))
-}
+  const dispatch = useDispatch();
 
-// cart Inc
-const HandleInc = (id) =>{
-  dispatch(increaseQuantity(id))
-}
+  // cart dec
+  const HandleDec = (id) => {
+    dispatch(decreaseQuantity(id));
+  };
 
-// cart delete
+  // cart Inc
+  const HandleInc = (id) => {
+    dispatch(increaseQuantity(id));
+  };
 
-const RemoveCart = (id) =>{
-dispatch(removeFromCart(id))
-}
-
-// add new product 
-
-const Addnewitem = () =>{
-
-}
-
-
-
-
-  // const Addnewitem = () => {
-  //   const newItem = {
-  //     id: CardItem.length + 1,
-  //     image: "person1.png",
-  //     title: "The 90s with Dj Neptune",
-  //     date: "Dec 12 2022",
-  //     Location: "Quilox Club",
-  //     price: "4500",
-  //     time: "9:00 PM",
-  //     quantity: 1,
-  //   };
-  //   setCardItem([...CardItem, newItem]);
-  // };
-
-
-
+  // cart delete
+  const RemoveCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
 
   return (
-    <section className="flex flex-col lg:flex-row gap-6 w-[90%] mx-auto mt-24">
+    <section className="flex flex-col lg:flex-row gap-6 lg:w-[90%] w-[95%] mx-auto lg:mt-20 mt-10">
       {/* right side  */}
-      <div className="flex-1 p-6">
-        <h2 className="text-base font-semibold text-[#969DAA]">Your Cart</h2>
+      <div className=" lg:w-[60%] w-full">
+        <h2 className="text-base font-bold text-[#969DAA] ">Your Cart</h2>
 
         {carts.map((Item) => (
           <div
             key={Item.id}
-            className="flex items-center gap-4 mb-6 p-4 border-b-1"
+            className="flex items-start lg:gap-9  pb-4  border-b-1 border-b-gray-200 mt-7"
           >
-            <img className="w-24 h-24 rounded-lg" src={Item.img} />
-            <div className="flex-1">
-              <h3>{Item.title}</h3>
-
-              <div className="mt-4">
-                <div className="flex gap-3 items-center">
-                  <div className="flex items-center gap-2">
-                    <img className="w-4 h-4" src="/Calendar.png" />
-                    <p className="text-sm text-gray-600">date</p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <img className="w-4 h-4" src="/Calendar.png" />
-                    <p className="text-sm text-gray-600">loca</p>
-                  </div>
-                </div>
-
-                <div className=" flex items-center gap-2 mt-1">
-                  <img className="w-4 h-4" src="/Clock.png" />
-                  <p className="text-sm text-gray-600">time</p>
-                </div>
-              </div>
-
-              {/* quantuty  */}
-              <div className="flex items-center gap-4 mt-4 bg-gray-100 rounded w-fit">
-                <button
-                  className="py-1 px-2 hover:bg-gray-300"
-                  onClick={() =>HandleDec(Item.id)}
-                >
-                  -
-                </button>
-                <span>{Item.quantity}</span>
-                <button
-                  className="py-1 px-2 hover:bg-gray-300 w-fit"
-                  onClick={()=>HandleInc(Item.id)}
-                >
-                  +
-                </button>
-              </div>
-
-              <p className="mt-2 text-lg font-bold">
-                ₦{Item.price * Item.quantity}
-              </p>
+            <div className=" w-[30%]  mx-auto">
+              <img className=" lg:w-full w-28 rounded-lg" src={Item.img} />
             </div>
-            <button
-              onClick={()=>RemoveCart(Item.id)}
-              className="py-1.5 px-4 rounded-full bg-red-500 text-base text-white"
-            >
-              delete
-            </button>
+
+            <div className="lg:w-[70%] mx-auto ">
+              <div>
+                <div className=" flex items-center justify-between gap-5">
+                  <div className="">
+                    <h3 className=" lg:text-[22px] text-[12px] font-semibold">
+                      {Item.title}
+                    </h3>
+                  </div>
+
+                  {/* quantuty  */}
+                  <div className="flex items-center gap-4  bg-gray-100 rounded w-fit">
+                    <button
+                      className="lg:py-1 lg:px-2 py-0.5 px-1 hover:bg-gray-300 font-bold"
+                      onClick={() => HandleDec(Item.id)}
+                    >
+                      -
+                    </button>
+                    <span className=" text-[10px] lg:text-base font-bold">
+                      {Item.quantity}
+                    </span>
+                    <button
+                      className="lg:py-1 lg:px-2 py-0.5 px-1 hover:bg-gray-300 w-fit font-bold"
+                      onClick={() => HandleInc(Item.id)}
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div>
+                    <p className=" lg:text-lg text-[12px] font-bold">
+                      ₦{Item.price * Item.quantity}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <div className="flex gap-3 items-center">
+                    <div className="flex items-center gap-2">
+                      <img className="lg:size-5 size-3.5" src="/Calendar.png" />
+                      <p className="lg:text-sm text-[9px] font-bold text-[#26395C]">
+                        {Item.Calendartitle}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <img className="lg:Size-5 size-3.5" src="/Mark.png" />
+                      <p className="lg:text-sm text-[9px] font-bold text-[#26395C]">
+                        {Item.locationtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className=" flex items-center justify-between">
+                    <div className=" flex items-center gap-2 mt-3">
+                      <img className=" lg:size-5 size-3.5" src="/Clock.png" />
+                      <p className="lg:text-sm text-[9px] te font-bold text-[#26395C]">
+                        {Item.Clocktitle}
+                      </p>
+                    </div>
+
+                    <button onClick={() => RemoveCart(Item.id)} className="">
+                      <RxCross1 className=" lg:size-7 size-5 text-red-500" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
-
-        <button
-          onClick={Addnewitem}
-          className="py-1.5 px-2 rounded-md bg-primary-500 text-white text-lg"
-        >
-          Add new button
-        </button>
       </div>
 
       {/* left side  */}
-      <div className="flex-1 p-6 border-l-1">
+      <div className=" lg:w-[40%] w-full p-4  border-l-1 border-l-gray-200">
         {/* account section  */}
-        <div className="pb-6 mb-6 border-b-1 ">
-          <h3 className="text-lg font-semibold mb-2 flex gap-2">
-            <img src="/check.png" />
-            Account information
+        <div className="pb-6 mb-6  border-b-1 border-b-gray-200 ">
+          <h3 className=" font-semibold mb-2 flex items-center gap-2">
+            <img className=" lg:size-5 size-4" src="/check.png" />
+            <span className=" text-base lg:text-lg font-bold text-[#26395C]">
+              {" "}
+              Account information
+            </span>
           </h3>
 
           <div className="ms-8 ">
-            <p>Tunde Chukwu</p>
-            <p>tundechukwu12@gmail.com</p>
+            <p className=" lg:text-base text-[#26395C] text-sm">Tunde Chukwu</p>
+            <p className=" lg:text-base text-[#26395C] text-sm">
+              tundechukwu12@gmail.com
+            </p>
           </div>
         </div>
 
         {/* Phone number section  */}
-        <div className="pb-6 mb-6  border-b-1 ">
-          <h3 className="text-lg font-semibold mb-2 flex gap-2">
-            <img src="/check.png" />
-            Phone number
+        <div className="pb-6 mb-6   border-b-1 border-b-gray-200 ">
+          <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+            <img className=" lg:size-5 size-4" src="/check.png" />
+            <span className=" text-base lg:text-lg text-[#26395C]">
+              Phone number
+            </span>
           </h3>
 
           <div className="ms-8 ">
-            <p>+2341123465799</p>
+            <p className=" lg:text-base text-[#26395C] text-sm">
+              +2341123465799
+            </p>
           </div>
         </div>
 
         {/* payment fieild */}
 
-        {/* <div>
+        <div>
           <h3
             onClick={() => setShowpayment(!Showpayment)}
-            className="text-lg font-semibold mb-2 flex gap-2"
+            className="text-lg font-semibold mb-2 flex items-center gap-2"
           >
-            <img src="/check.png" />
-            Payment <span className="font-normal text-[#969DAA]">card</span>
-            <div className="text-[#969DAA] text-xl">
+            <img className="lg:size-5 size-4" src="/check.png" />
+           <h4 className="text-base lg:text-lg text-[#26395C] font-bold"> Payment <span className=" font-normal text-[#969DAA] text-sm lg:text-base ">Card</span></h4>
+            <div className="text-[#969DAA] lg:text-xl text-base">
               <IoIosArrowDown />
             </div>
           </h3>
@@ -194,7 +196,7 @@ const Addnewitem = () =>{
               />
             </div>
           )}
-        </div> */}
+        </div>
 
         <div className="bg-gray-100 p-4 rounded-lg mt-5">
           <ul>
@@ -208,39 +210,46 @@ const Addnewitem = () =>{
             ))}
           </ul>
 
-
-             {/* Subtotal */}
+          {/* Subtotal */}
           <hr className="my-2" />
           <div className="flex justify-between">
             <span>Subtotal:</span>
             <span>
               ₦
-              {carts.reduce(
-                (sum, item) => sum  + item.price * item.quantity,0
-              ).toLocaleString()}
+              {carts
+                .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                .toLocaleString()}
             </span>
           </div>
 
-       {/* text  */}
+          {/* text  */}
           <div className="flex justify-between mt-2">
             <span>Tax(5%):</span>
             <span>
               ₦
               {(
-                carts.reduce((sum, item) => sum + item.price * item.quantity, 0) * 0.05
+                carts.reduce(
+                  (sum, item) => sum + item.price * item.quantity,
+                  0,
+                ) * 0.05
               ).toLocaleString()}
             </span>
           </div>
-           {/* total */}
-            <hr className="my-2" />
-           <div className="flex justify-between font-bold">
-           <span className="text-base text-teal-500">Total aumont:</span>
-            <span className="text-base text-red-500">Total ₦{(carts.reduce((sum,item)=> sum + item.price * item.quantity,0) * 1.05).toLocaleString()}</span>
-
-           </div>
-           <MyModral/>
-
-
+          {/* total */}
+          <hr className="my-2" />
+          <div className="flex justify-between font-bold">
+            <span className="text-base text-teal-500">Total aumont:</span>
+            <span className="text-base text-red-500">
+              Total ₦
+              {(
+                carts.reduce(
+                  (sum, item) => sum + item.price * item.quantity,
+                  0,
+                ) * 1.05
+              ).toLocaleString()}
+            </span>
+          </div>
+          <MyModral />
         </div>
       </div>
     </section>

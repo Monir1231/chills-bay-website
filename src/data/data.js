@@ -92,6 +92,9 @@ export const GalleryData =[
         img:"card1.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
+         Calendartitle: "JAN 12 2025",
+          locationtitle: "Rajbari",
+           Clocktitle: "10:00 PM ",
         button:"Reserve Now",
         price:4500
     },
@@ -100,6 +103,9 @@ export const GalleryData =[
         img:"card2.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
+         Calendartitle: "Dec 12 2025",
+          locationtitle: "Dhika",
+           Clocktitle: "9:00 PM ",
         button:"Reserve Now",
          price:4500
     },
@@ -108,6 +114,9 @@ export const GalleryData =[
         img:"card3.png",
         title:"Slow Lagos",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
+         Calendartitle: "FUB 12 2026",
+          locationtitle: "Josor",
+           Clocktitle: "9:00 PM ",
         button:"Reserve Now",
          price:4500
     },
@@ -115,6 +124,9 @@ export const GalleryData =[
          id:4,
         img:"card4.png",
         title:"Slow Lagos",
+         Calendartitle: "FUB 11 2026",
+         locationtitle: "TBS  Lagos",
+           Clocktitle: "9:00 PM ",
         des:"2 Musa Yar’Adua, Lagos Nigeria",
         button:"Reserve Now",
          price:4500

@@ -16,6 +16,7 @@ const CarouselData = [
     Marktitle: "TBS  Lagos",
     Clockimg: "Clock.png",
     Clocktitle: "9:00 PM ",
+   
     Tagimg: "Tag.png",
     Tagtitle: "N20,000",
   },
