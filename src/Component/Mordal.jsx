@@ -46,7 +46,7 @@ function MYMordal({isDark}) {
           <ModalBody className="lg:px-0 lg:py-0 py-4 px-3 ">
             <div className="flex flex-col md:flex-row lg:h-full lg:w-full  overflow-y-auto md:overflow-visible ">
               {/* left side  */}
-              <div className='bg-[url("LoginImg.png")] bg-cover bg-no-repeat bg-center flex-col text-white w-full md:w-1/3 p-8 hidden lg:flex'>
+              <div className='bg-[url("/LoginImg.png")] bg-cover bg-no-repeat bg-center flex-col text-white w-full md:w-1/3 p-8 hidden lg:flex'>
                 <h1 className="text-4xl text-start mb-5 mt-10 font-bold">
                   Sign Up
                 </h1>
