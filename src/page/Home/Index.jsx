@@ -7,7 +7,7 @@ import Shoping from './Shoping'
 import MyCarousel from './Carousel'
 import Allpeople from './Allpeople'
 
-function Home() {
+function HomePage() {
   return (
     <>
 
@@ -22,4 +22,4 @@ function Home() {
   )
 }
 
-export default Home
+export default HomePage

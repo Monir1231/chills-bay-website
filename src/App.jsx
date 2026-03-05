@@ -7,7 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyPayment from "./page/Payment/Payment"
 import Contact from "./page/Contact/Contact";
 import Wrapper from "./Component/Wrapper";
-import Home from "./page/Home";
+import HomePage from "./page/Home/Index";
+
 
 
 
@@ -17,7 +18,7 @@ function App() {
       <BrowserRouter>
         {/* <MyNavbar /> */}
         <Routes>
-          <Route path="/" element={<Wrapper><Home/></Wrapper>} />
+          <Route path="/" element={<Wrapper><HomePage/></Wrapper>} />
            <Route path="/drink" element={<Wrapper><DrinkPage/></Wrapper>} />
            <Route path="/club" element={<Wrapper isDark><ClubPage/></Wrapper>}/>
            <Route path="/cart" element={<Wrapper><MyPayment/></Wrapper>}/>
